@@ -3,6 +3,7 @@ package discovery
 import (
 	"encoding/json"
 	"net/http"
+	"strings"
 )
 
 type Options struct {
@@ -24,7 +25,7 @@ func NewClient(options Options) *Client {
 func (client *Client) GetOpenidConfiguration() (OpenidConfiguration, error) {
 	var cfg = OpenidConfiguration{}
 
-	resp, err := http.Get(client.Options.Authority + ".well-known/openid-configuration")
+	resp, err := http.Get(singleJoiningSlash(client.Options.Authority, ".well-known/openid-configuration"))
 	if err != nil {
 		return cfg, err
 	}
@@ -50,4 +51,16 @@ func (client *Client) GetOpenidConfiguration() (OpenidConfiguration, error) {
 	cfg.JsonWebKeySet = jwks.Keys
 
 	return cfg, err
+}
+
+func singleJoiningSlash(a, b string) string {
+	aslash := strings.HasSuffix(a, "/")
+	bslash := strings.HasPrefix(b, "/")
+	switch {
+	case aslash && bslash:
+		return a + b[1:]
+	case !aslash && !bslash && b != "":
+		return a + "/" + b
+	}
+	return a + b
 }
