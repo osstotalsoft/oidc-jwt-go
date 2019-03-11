@@ -67,7 +67,7 @@ func TestValidator(t *testing.T) {
 	}
 }
 
-func BenchmarkAuthorizationFilter(b *testing.B) {
+func BenchmarkTestValidator(b *testing.B) {
 	privateKey := test.LoadRSAPrivateKeyFromDisk("./test/sample_key")
 	publicKey := test.LoadRSAPublicKeyFromDisk("./test/sample_key.pub")
 	token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)

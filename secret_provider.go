@@ -46,7 +46,7 @@ func (p *oidcSecretProvider) GetSecret(tokenKeyId string) (*rsa.PublicKey, error
 	}
 
 	publicKey, err := p.interalGetSecret(tokenKeyId)
-	if err != nil {
+	if err == nil {
 		p.cache.Store(tokenKeyId, publicKey)
 	}
 	return publicKey, err
