@@ -10,10 +10,10 @@ type OpenidConfiguration struct {
 	CheckSessionIframe                 string       `json:"check_session_iframe"`
 	RevocationEndpoint                 string       `json:"revocation_endpoint"`
 	IntrospectionEndpoint              string       `json:"introspection_endpoint"`
-	FrontchannelLogoutSupported        string       `json:"frontchannel_logout_supported"`
-	FrontchannelLogoutSessionSupported string       `json:"frontchannel_logout_session_supported"`
-	BackchannelLogoutSupported         string       `json:"backchannel_logout_supported"`
-	BackchannelLogoutSessionSupported  string       `json:"backchannel_logout_session_supported"`
+	FrontchannelLogoutSupported        bool         `json:"frontchannel_logout_supported"`
+	FrontchannelLogoutSessionSupported bool         `json:"frontchannel_logout_session_supported"`
+	BackchannelLogoutSupported         bool         `json:"backchannel_logout_supported"`
+	BackchannelLogoutSessionSupported  bool         `json:"backchannel_logout_session_supported"`
 	ScopesSupported                    []string     `json:"scopes_supported"`
 	ClaimsSupported                    []string     `json:"claims_supported"`
 	GrantTypesSupported                []string     `json:"grant_types_supported"`
