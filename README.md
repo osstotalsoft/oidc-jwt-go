@@ -50,4 +50,3 @@ The Secret Provider uses a simple sync.Map, with no expiration, to cache the rsa
  - https://github.com/auth0/node-jwks-rsa
  - https://github.com/auth0/go-jwt-middleware
  - https://github.com/appleboy/gin-jwt
- - https://github.com/gbrlsnchs/jwt
