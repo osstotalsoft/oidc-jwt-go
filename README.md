@@ -45,8 +45,11 @@ func UnauthorizedWithHeader(writer http.ResponseWriter, err string) {
 ## Caching 
 The Secret Provider uses a simple sync.Map, with no expiration, to cache the rsa.PublicKey by a Key ID string  
 
+## TODO
+ - Token Introspection [rfc7662](https://tools.ietf.org/html/rfc7662)
+ - UserInfo [UserInfo](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo)
+ 
 ## Similar projects
  - https://github.com/auth0-community/go-auth0
- - https://github.com/auth0/node-jwks-rsa
  - https://github.com/auth0/go-jwt-middleware
  - https://github.com/appleboy/gin-jwt
