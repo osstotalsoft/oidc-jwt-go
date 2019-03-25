@@ -2,10 +2,10 @@
 OpenID Connect package to secure your API using JWT Bearer tokens.
 It uses [dgrijalva/jwt-go](https://github.com/dgrijalva/jwt-go) for jwt decoding and signature verification
  
-##Installation
+## Installation
 `go get "github.com/osstotalsoft/oidc-jwt-go" `
 
-##Usage
+## Usage
 ````go
 import (
 	"log"
@@ -15,7 +15,7 @@ import (
 	"github.com/osstotalsoft/oidc-jwt-go"
 )
 
-func middlerware() func(next http.Handler) http.Handler {
+func middleware() func(next http.Handler) http.Handler {
 	authority := "https://accounts.google.com" //or other OIDC provider
 	audience := "YOUR_API_NAME"
 
@@ -42,10 +42,10 @@ func UnauthorizedWithHeader(writer http.ResponseWriter, err string) {
 }
 ````
 
-##Caching 
+## Caching 
 The Secret Provider uses a simple sync.Map, with no expiration, to cache the rsa.PublicKey by a Key ID string  
 
-##Similar projects
+## Similar projects
  - https://github.com/auth0-community/go-auth0
  - https://github.com/auth0/node-jwks-rsa
  - https://github.com/auth0/go-jwt-middleware
