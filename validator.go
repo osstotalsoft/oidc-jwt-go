@@ -2,9 +2,10 @@ package oidc
 
 import (
 	"errors"
-	"github.com/dgrijalva/jwt-go"
-	jwtRequest "github.com/dgrijalva/jwt-go/request"
 	"net/http"
+
+	"github.com/golang-jwt/jwt"
+	jwtRequest "github.com/golang-jwt/jwt/request"
 )
 
 func NewJWTValidator(extractor jwtRequest.Extractor, provider SecretProvider, audience string, authority string) func(request *http.Request) (*jwt.Token, error) {

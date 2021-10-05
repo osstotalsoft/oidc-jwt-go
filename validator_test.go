@@ -1,13 +1,14 @@
 package oidc
 
 import (
-	"github.com/dgrijalva/jwt-go"
-	jwtRequest "github.com/dgrijalva/jwt-go/request"
-	"github.com/dgrijalva/jwt-go/test"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/golang-jwt/jwt"
+	jwtRequest "github.com/golang-jwt/jwt/request"
+	"github.com/golang-jwt/jwt/test"
 )
 
 var Authority = "http://kube-worker1:30692"

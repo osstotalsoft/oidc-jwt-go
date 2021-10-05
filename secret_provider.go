@@ -3,9 +3,11 @@ package oidc
 import (
 	"crypto/rsa"
 	"errors"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/osstotalsoft/oidc-jwt-go/discovery"
+
 	"sync"
+
+	"github.com/golang-jwt/jwt"
+	"github.com/osstotalsoft/oidc-jwt-go/discovery"
 )
 
 type SecretProvider interface {
