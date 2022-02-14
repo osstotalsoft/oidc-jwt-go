@@ -20,7 +20,7 @@ func middleware() func(next http.Handler) http.Handler {
 	audience := "YOUR_API_NAME"
 
 	secretProvider := oidc.NewOidcSecretProvider(discovery.NewClient(discovery.Options{authority}))
-	validator := oidc.NewJWTValidator(jwtRequest.OAuth2Extractor, opts.SecretProvider, audience, authority)
+	validator := oidc.NewJWTValidator(jwtRequest.OAuth2Extractor, secretProvider, audience, authority)
 
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
