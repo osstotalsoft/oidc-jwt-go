@@ -3,7 +3,7 @@ package oidc
 import (
 	"crypto/rsa"
 	"errors"
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v4"
 	"github.com/osstotalsoft/oidc-jwt-go/discovery"
 	"sync"
 )

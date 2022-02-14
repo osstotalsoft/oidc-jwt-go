@@ -1,9 +1,9 @@
 package oidc
 
 import (
-	"github.com/dgrijalva/jwt-go"
-	jwtRequest "github.com/dgrijalva/jwt-go/request"
-	"github.com/dgrijalva/jwt-go/test"
+	"github.com/golang-jwt/jwt/v4"
+	jwtRequest "github.com/golang-jwt/jwt/v4/request"
+	"github.com/golang-jwt/jwt/v4/test"
 	"io"
 	"net/http"
 	"net/http/httptest"

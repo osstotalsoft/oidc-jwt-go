@@ -1,6 +1,6 @@
 # oidc-jwt-go
 OpenID Connect package to secure your API using JWT Bearer tokens.
-It uses [dgrijalva/jwt-go](https://github.com/dgrijalva/jwt-go) for jwt decoding and signature verification
+It uses [dgrijalva/jwt-go](https://github.com/golang-jwt/jwt) for jwt decoding and signature verification
  
 ## Installation
 `go get "github.com/osstotalsoft/oidc-jwt-go" `
@@ -11,7 +11,7 @@ import (
 	"log"
 	"net/http"
 
-	jwtRequest "github.com/dgrijalva/jwt-go/request"
+	jwtRequest "github.com/golang-jwt/jwt/request"
 	"github.com/osstotalsoft/oidc-jwt-go"
 )
 
